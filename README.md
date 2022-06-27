@@ -10,16 +10,16 @@
   <h3 align="center">An Analysis of Github Incident Tickets Submitted to the Astronomer Repository</h3>
 
   <p align="center">
-    This was created in hopes to motivate others who may be curious about analyzing their company repository.
+    This was created in hopes to motivate others to be curious about analyzing their company repository.
     <br />
-    <a href="https://github.com/AmirZahre/Data_Analyst_DAG/"><strong>Checkout the code »</strong></a>
+    <a href="https://github.com/AmirZahre/Github_Org_Repo_Analysis/"><strong>Check out the code »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/AmirZahre/Data_Analyst_DAG/releases/tag/Astronomer">Download</a>
+    <a href="https://github.com/AmirZahre/Github_Org_Repo_Analysis/releases/tag/Astronomer">Download</a>
     ·
-    <a href="https://github.com/AmirZahre/Data_Analyst_DAG/issues">Report Bug</a>
+    <a href="https://github.com/AmirZahre/Github_Org_Repo_Analysis/issues">Report Bug</a>
     ·
-    <a href="https://github.com/AmirZahre/Data_Analyst_DAG/issues">Request Feature</a>
+    <a href="https://github.com/AmirZahre/Github_Org_Repo_Analysis/issues">Request Feature</a>
   </p>
 </p>
 
@@ -39,19 +39,19 @@
   
 [![diagram]](#)  
 
-Databricks is powerful, as is Apache Airflow. Together, they make a compelling use case for a well-rounded, all-you-need stack for many of your data pipeline needs. This project showcases the utilization of Databricks to extract, manipulate, and upsert data into its Delta Table infrastructure, all nicely wrapped (and automated!) with Apache Airflow.
+A company's Github repository contains a plethora of insights. If leveraged, it can be a powerful tool towards understanding the needs of clients and prospects. This project is a brief dive into the ways one can analyze their company's repository. Enjoy.
+
   
 ### Built With
 * [Python](https://www.python.org/)
-* [Apache Airflow](https://airflow.apache.org/)
-* [Databricks](https://databricks.com/)
+
 
 ### Built For
-* [Astronomer](https://www.astronomer.io/) as one of my many projects during my 2022 Spring internship.
+* [Astronomer](https://www.astronomer.io/) as my interview assignment.
   
 ### Important Files (i.e. my code)
-* [Airflow File](https://github.com/AmirZahre/Data_Analyst_DAG/blob/main/dags/databricks.py)
-* [Databricks Workbook](https://github.com/AmirZahre/Data_Analyst_DAG/blob/main/dag-workshop.ipynb)
+* [Python Code](https://github.com/AmirZahre/Github_Org_Repo_Analysis/blob/main/astronomer_V1.ipynb)
+
 
 
 <!-- PROCESS -->
@@ -214,3 +214,4 @@ Project Link: [https://github.com/AmirZahre/Data_Analyst_DAG](https://github.com
 [xcom]: images/xcom.png
   
   
+
