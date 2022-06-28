@@ -1,3 +1,4 @@
+
 <!-- PROJECT SHIELDS -->
 [![GPL License][license-shield]][license-url]
 [![Forks][forks-shield]][forks-url]
@@ -28,7 +29,9 @@
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-  * [Built With](#built-with)
+	* [Points of Interest](#points-of-interest)
+	* [Notable Insights](#notable-insights)
+* [Built With](#built-with)
 * [License](#license)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
@@ -48,7 +51,6 @@ A company's Github repository contains a plethora of insights. If leveraged, it 
 4. <b>Cell 17</b>, in a similar trend to the volume of tickets submitted, shows some interesting changes in the number of unique accounts submitting tickets within the same time frame.
   
 ## Notable Insights
-### 
 [![volume]](#)
  * On a month to month basis, the volume of tickets hovered at around the same levels for the years 2015 to 2018.
  * Beginning 2019, ticket volume begins to increase above historic levels.
@@ -101,7 +103,7 @@ Project Link: [https://github.com/AmirZahre/Data_Analyst_DAG](https://github.com
   
 <!-- MARKDOWN LINKS & IMAGES -->
 [license-shield]: https://img.shields.io/github/license/AmirZahre/Github_Org_Repo_Analysis
-[license-url]: https://github.com/AmirZahre/Github_Org_Repo_Analysis/blob/main/LICENSE.md
+[license-url]: https://github.com/AmirZahre/Github_Org_Repo_Analysis/blob/main/LICENSE
 [issues-shield]: https://img.shields.io/github/issues/AmirZahre/Github_Org_Repo_Analysis
 [issues-url]: https://github.com/AmirZahre/Github_Org_Repo_Analysis/issues
 [forks-shield]: https://img.shields.io/github/forks/AmirZahre/Github_Org_Repo_Analysis
@@ -111,6 +113,3 @@ Project Link: [https://github.com/AmirZahre/Data_Analyst_DAG](https://github.com
 [volume]: images/volume.png
 [unique]: images/unique.png
 [volume_complete]: images/volume_complete.png
-
-  
-  
