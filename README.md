@@ -47,17 +47,6 @@ A company's Github repository contains a plethora of insights. If leveraged, it 
 3. <b>Cell 14</b> utilizes a Binary Search Tree (BST) to quickly and efficiently organize User ID's in order to create a list of unique repository visitors. Starting from 2015 and moving towards the present, each User ID will be compared to the User ID's in the BST. If the user ID exists, that user is <b>not</b> a unique submitter; however, if it does not exist, it's the user's first time submitting a ticket -- and therefore, they're unique.
 4. <b>Cell 17</b>, in a similar trend to the volume of tickets submitted, shows some interesting changes in the number of unique accounts submitting tickets within the same time frame.
   
-### Built With
-* [Python](https://www.python.org/)
-
-
-### Built For
- * [Astronomer](https://www.astronomer.io/) as my interview assignment.
-  
-### Important Files (i.e. my code)
- * [Python Code](https://github.com/AmirZahre/Github_Org_Repo_Analysis/blob/main/jupyter_notebook.ipynb)
- 
- 
 ## Notable Insights
 ### 
 [![volume]](#)
@@ -78,7 +67,17 @@ A company's Github repository contains a plethora of insights. If leveraged, it 
 
 [![volume_complete]](#)
 ##### We're able to see an interesting (and positive) trend here: although the volume of tickets held at roughly the same level for 2021, the time it took from ticket creation to completion was on the decline! This is good news -- it may imply that community engagement is increasing (quicker response times from members) and documentation/knowledge quality is improving.
+
+### Built With
+* [Python](https://www.python.org/)
+
+### Built For
+ * [Astronomer](https://www.astronomer.io/) as my interview assignment.
   
+### Important Files (i.e. my code)
+ * [Python Code](https://github.com/AmirZahre/Github_Org_Repo_Analysis/blob/main/jupyter_notebook.ipynb)
+
+
 <!-- LICENSE -->
 ## License
 
