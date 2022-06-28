@@ -1,4 +1,5 @@
 
+
 <!-- PROJECT SHIELDS -->
 [![GPL License][license-shield]][license-url]
 [![Forks][forks-shield]][forks-url]
@@ -57,7 +58,7 @@ A company's Github repository contains a plethora of insights. If leveraged, it 
  * 2020 is where things begin to get interesting, as ticket volume begins to substantially increase.
  * Overall, there is a substantial increase in volume for the entire periods of 2020 and 2021 vs. the years prior.
 ##### How does the volume of tickets match with the number of unique visitors? Is it the same people just asking more tickets, or can this partially be attributed to a greater number of unique individuals experiencing issues?
- 
+ ___
 [![unique]](#)
 
 * The increase in volume of tickets follows the trend of the increase of unique submitters.
@@ -66,10 +67,10 @@ A company's Github repository contains a plethora of insights. If leveraged, it 
 * Since that period, the levels of unique users has continued to be maintained.
 * Assumptions as to why the levels rose drastically can be due to COVID-19, as the pandemic also began March 2020.
 ##### The reasoning behind this spike required further digging. I'd like to look into the number of enterprises utilizing Apache Airflow, as an influx of large corporations could also influence the large spike in activity from community members.
-
+___
 [![volume_complete]](#)
 ##### We're able to see an interesting (and positive) trend here: although the volume of tickets held at roughly the same level for 2021, the time it took from ticket creation to completion was on the decline! This is good news -- it may imply that community engagement is increasing (quicker response times from members) and documentation/knowledge quality is improving.
-
+___
 ### Built With
 * [Python](https://www.python.org/)
 
