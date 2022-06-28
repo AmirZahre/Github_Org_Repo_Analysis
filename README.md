@@ -103,7 +103,7 @@ Project Link: [https://github.com/AmirZahre/Data_Analyst_DAG](https://github.com
 * [The team @ Astronomer](https://www.astronomer.io/) for help with any questions that arose while learning Airflow.
   
 <!-- MARKDOWN LINKS & IMAGES -->
-[license-shield]: https://img.shields.io/github/license/AmirZahre/Github_Org_Repo_Analysis
+[license-shield]: https://img.shields.io/github/license/AmirZahre/Github_Org_Repo_Analysis?label=license
 [license-url]: https://github.com/AmirZahre/Github_Org_Repo_Analysis/blob/main/LICENSE.md
 [issues-shield]: https://img.shields.io/github/issues/AmirZahre/Github_Org_Repo_Analysis
 [issues-url]: https://github.com/AmirZahre/Github_Org_Repo_Analysis/issues
