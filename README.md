@@ -36,8 +36,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-  
-[![diagram]](#)  
 
 A company's Github repository contains a plethora of insights. If leveraged, it can be a powerful tool towards understanding the needs of clients and prospects. This project is a brief dive into the ways one can analyze their company's repository. Enjoy.
 
@@ -79,7 +77,7 @@ A company's Github repository contains a plethora of insights. If leveraged, it 
 ##### The reasoning behind this spike required further digging. I'd like to look into the number of enterprises utilizing Apache Airflow, as an influx of large corporations could also influence the large spike in activity from community members.
 
 [![volume_complete]](#)
-We're able to see an interesting (and positive) trend here: although the volume of tickets held at roughly the same level for 2021, the time it took from ticket creation to completion was on the decline! This is good news -- it may imply that community engagement is increasing (quicker response times from members) and documentation/knowledge quality is improving.
+##### We're able to see an interesting (and positive) trend here: although the volume of tickets held at roughly the same level for 2021, the time it took from ticket creation to completion was on the decline! This is good news -- it may imply that community engagement is increasing (quicker response times from members) and documentation/knowledge quality is improving.
   
 <!-- LICENSE -->
 ## License
