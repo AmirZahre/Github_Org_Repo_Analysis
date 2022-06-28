@@ -98,18 +98,16 @@ Project Link: [https://github.com/AmirZahre/Data_Analyst_DAG](https://github.com
 ## Acknowledgements
 * [Santona Tuli](https://www.linkedin.com/in/santona-tuli/) for being an awesome mentor towards my introduction to DevOps!
 * [The team @ Astronomer](https://www.astronomer.io/) for help with any questions that arose while learning Airflow.
-* [Ran Aroussi](https://pypi.org/user/ranaroussi/) for creating a fabulous Yahoo Finance API library for Python.
-
   
 <!-- MARKDOWN LINKS & IMAGES -->
-[license-shield]: https://img.shields.io/github/license/AmirZahre/Data_Analyst_DAG
-[license-url]: https://github.com/AmirZahre/Data_Analyst_DAG/blob/main/LICENSE.md
-[issues-shield]: https://img.shields.io/github/issues/AmirZahre/Data_Analyst_DAG
-[issues-url]: https://github.com/AmirZahre/Data_Analyst_DAG/issues
-[forks-shield]: https://img.shields.io/github/forks/AmirZahre/Data_Analyst_DAG
-[forks-url]: https://github.com/AmirZahre/Data_Analyst_Dag/network/members
-[cSize-shield]: https://img.shields.io/github/languages/code-size/AmirZahre/Data_Analyst_Dag
-[cSize-url]: https://github.com/AmirZahre/Data_Analyst_DAG
+[license-shield]: https://img.shields.io/github/license/AmirZahre/Github_Org_Repo_Analysis
+[license-url]: https://github.com/AmirZahre/Github_Org_Repo_Analysis/blob/main/LICENSE.md
+[issues-shield]: https://img.shields.io/github/issues/AmirZahre/Github_Org_Repo_Analysis
+[issues-url]: https://github.com/AmirZahre/Github_Org_Repo_Analysis/issues
+[forks-shield]: https://img.shields.io/github/forks/AmirZahre/Github_Org_Repo_Analysis
+[forks-url]: https://github.com/AmirZahre/Github_Org_Repo_Analysis/network/members
+[cSize-shield]: https://img.shields.io/github/languages/code-size/AmirZahre/Github_Org_Repo_Analysis
+[cSize-url]: https://github.com/AmirZahre/Github_Org_Repo_Analysis
 [volume]: images/volume.png
 [unique]: images/unique.png
 [volume_complete]: images/volume_complete.png
