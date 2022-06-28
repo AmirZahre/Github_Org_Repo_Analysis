@@ -41,134 +41,45 @@
 
 A company's Github repository contains a plethora of insights. If leveraged, it can be a powerful tool towards understanding the needs of clients and prospects. This project is a brief dive into the ways one can analyze their company's repository. Enjoy.
 
+##### Important Note: Part 1 and Part 2 of the code were predominantly written by [Santona Tuli](https://www.linkedin.com/in/santona-tuli/), albeit for a few changes I added here and there.
+
+#### Points of Interest:
+1. <b>Cell 2</b> introduces a method of locally caching the .json responses derived from the repository. This allows us to run the code without needing to scrape the data each time, as previously pulled data is saved to <b>airflow_issues.feather</b>.
+2. <b>Cell 12</b> derives some valuable insights pertaining to the volume of tickets submitted over the last ~7 years. This is touched on below.
+3. <b>Cell 14</b> utilizes a Binary Search Tree (BST) to quickly and efficiently organize User ID's in order to create a list of unique repository visitors. Starting from 2015 and moving towards the present, each User ID will be compared to the User ID's in the BST. If the user ID exists, that user is <b>not</b> a unique submitter; however, if it does not exist, it's the user's first time submitting a ticket -- and therefore, they're unique.
+4. <b>Cell 17</b>, in a similar trend to the volume of tickets submitted, shows some interesting changes in the number of unique accounts submitting tickets within the same time frame.
   
 ### Built With
 * [Python](https://www.python.org/)
 
 
 ### Built For
-* [Astronomer](https://www.astronomer.io/) as my interview assignment.
+ * [Astronomer](https://www.astronomer.io/) as my interview assignment.
   
 ### Important Files (i.e. my code)
-* [Python Code](https://github.com/AmirZahre/Github_Org_Repo_Analysis/blob/main/astronomer_V1.ipynb)
-
-
-
-<!-- PROCESS -->
-## Use Case
-  
-Imagine a Data Analyst who works for an investment management firm, helping clients make good decisions about their investment portfolios. To do so, the Data Analyst retrieves market data regularly, and for each client provides an analysis of how the industries they are invested in perform.
-
-The Data Analyst persists the transformed data from analyses, sends automated notifications to clients to take action when relevant, and keeps a dashboard up to date for them to check their investment health at a glance.
-
-Let’s look into this Data Analysts workflow.
-  
-  
-  
+ * [Python Code](https://github.com/AmirZahre/Github_Org_Repo_Analysis/blob/main/jupyter_notebook.ipynb)
  
-  
-  
-## Process
-### Part 1: Airflow Triggers Databricks Notebook While Passing Parameters.
-  <b>Step 1:</b>
-  Pass parameters from Airflow using <b>notebook_params = portfolio</b>
-  
-```python
-  portfolio = {
-               "stocks": "MSFT AAPL IBM WMT SHOP GOOGL TSLA GME AMZN COST COKE CBRE NVDA AMD PG"
-               }
+ 
+## Notable Insights
+### 
+[[volume]](#)
+ * On a month to month basis, the volume of tickets hovered at around the same levels for the years 2015 to 2018.
+ * Beginning 2019, ticket volume begins to increase above historic levels.
+ * 2020 is where things begin to get interesting, as ticket volume begins to substantially increase.
+ * Overall, there is a substantial increase in volume for the entire periods of 2020 and 2021 vs. the years prior.
+##### How does the volume of tickets match with the number of unique visitors? Is it the same people just asking more tickets, or can this partially be attributed to a greater number of unique individuals experiencing issues?
+ 
+[[unique]](#)
 
-   # Run the Databricks job and retrieve the job Run ID
-   run_databricks_job = DatabricksRunNowOperator(
-       task_id="Run_Databricks_Job",
-       databricks_conn_id=DATABRICKS_CONNECTION_ID,
-       job_id=137122987688189,
-       do_xcom_push=True,
-       notebook_params = portfolio
-   )
-```
-<br>
-  
-  <b>Step 2:</b>
-  Use dbutils.widgets.text(param, default_value) to load params pushed by Airflow into the Databricks notebook.
-  [![param_get]](#)  
+* The increase in volume of tickets follows the trend of the increase of unique submitters.
+* Number of unique users held steady each year for the 2015 to 2019 period.
+* March of 2020, <b>something</b> happened to the community - the level of unique users submitting tickets rose sharply, from ~55 to    ~130 users for the month of March.
+* Since that period, the levels of unique users has continued to be maintained.
+* Assumptions as to why the levels rose drastically can be due to COVID-19, as the pandemic also began March 2020.
+##### The reasoning behind this spike required further digging. I'd like to look into the number of enterprises utilizing Apache Airflow, as an influx of large corporations could also influence the large spike in activity from community members.
 
-  
-### Part 2: Data ingestion & Transformations
-  <b>Step 1:</b>
-  Invoking the API, we pull today's market cap data from Yahoo Finance using the yfinance Python package.
-  [![invoke_api]](#) 
-  
-  <b>Step 2:</b> Aggregate today's market cap data by Industry Sector<br>
-  [![aggregate_mkt_cap]](#) 
-
-  
-### Part 3: Enjoying the View, A (Delta) Table on a (Delta) Lake
-  <b>Step 1:</b>
-  Transform the pandas dataframe into a Spark dataframe. Write that dataframe into a temporary Delta Table.
-  [![to_spark]](#) 
-  
-  <b>Step 2:</b>
-  Upsert the temp Delta Table (containing today's data) into the permanent Delta Table containing all previous historic data.
-  [![upsert]](#) 
-  
-  <br><b>Going forward, you can now link this table to Tableau for analysis.</b>
-  
-### Part 4: Monitoring portfolio performance & Email Notifications
-  <b>Step 1:</b>
-  Determining the Percentage Change from Day Prior
-  [![percent_change]](#) 
-  
-  <b>Step 2:</b>
-  Exit the Databricks Notebook with output data, which is subsequently captured by Airflow and passed around via. XCOM.
-  [![xcom]](#) 
-  
-  <b>Step 3:</b>
-  Ingesting results in Airflow: This data is picked up using the DatabricksHook and assigned to the variable model_uri.
-  ```python
-  @task
-   def Retreive_Databricks_Output(id):
-
-       # retrieve xcom data using DatabricksHook
-       databricks_hook = DatabricksHook()
-       model_uri = databricks_hook.get_run_output(id)['notebook_output']['result']
-
-       return model_uri
-
-   # Variable "Output" contains the xcom data from Databricks
-   retreive_databricks_output = Retreive_Databricks_Output(run_databricks_job.output['run_id'])
-  ```
-  
-  <b>Step 4:</b>
-  Using the BranchPythonOperator to decide whether to notify
-  ```python
-     # Decide as to whether or not an email should be sent based on the content of Output
-   branching = BranchPythonOperator(
-       task_id='Check_if_Email_is_Needed',
-       op_args = [retreive_databricks_output],
-       python_callable=_split,
-   )
-
-   def _split(data):
-       if data == "No Email Required":
-           print("LOG: No big movers, no email was sent")
-           return 'No_Email_Required'
-       else:
-           return 'Send_Email'
-  ```
-  
-  <b>Step 5:</b>
-  Send email notification.
-  ```python
-     # Send email containing the content of the xcom
-   mail = EmailOperator(
-       task_id='Send_Email',
-       to='your_email@gmail.com',
-       subject='Daily Movers',
-       html_content=retreive_databricks_output,
-       )
-  ```
-  
+[[volume_complete]](#)
+We're able to see an interesting (and positive) trend here: although the volume of tickets held at roughly the same level for 2021, the time it took from ticket creation to completion was on the decline! This is good news -- it may imply that community engagement is increasing (quicker response times from members) and documentation/knowledge quality is improving.
   
 <!-- LICENSE -->
 ## License
@@ -202,16 +113,9 @@ Project Link: [https://github.com/AmirZahre/Data_Analyst_DAG](https://github.com
 [forks-url]: https://github.com/AmirZahre/Data_Analyst_Dag/network/members
 [cSize-shield]: https://img.shields.io/github/languages/code-size/AmirZahre/Data_Analyst_Dag
 [cSize-url]: https://github.com/AmirZahre/Data_Analyst_DAG
-[diagram]: images/workflow.png
-[tasks]: images/task_dependencies.png
-[param_get]: images/param_get.png
-[param_check]: images/param_check.png
-[invoke_api]: images/invoke_api.png
-[aggregate_mkt_cap]: images/aggregate_mkt_cap.png
-[to_spark]: images/to_spark.png
-[upsert]: images/upsert.png
-[percent_change]: images/percent_change.png
-[xcom]: images/xcom.png
-  
-  
+[volume]: images/volume.png
+[unique]: images/unique.png
+[volume_complete]: images/volume_complete.png
 
+  
+  
